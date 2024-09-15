@@ -1,0 +1,19 @@
+.men{
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(0, 8,53)
+}
+.zIndex{
+    z-index: 1;
+}
+
+.intr{
+    font-size:30px;
+    font-weight: 350;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.contro{
+    font-size:50px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(0, 8,53)
+}

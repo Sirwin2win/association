@@ -1,0 +1,32 @@
+.percentM{
+    font-size: 100%;
+    margin-left: 0px;
+}
+.zIndex{
+    z-index: -1;
+}
+.fs{
+    font-size:5px;
+}
+.opa{
+    background-color: rgba(7, 18, 241, 0.3);
+}
+.intro{
+    font-size:50px;
+    font-weight: 700;
+    font-family: chiller;
+    margin-left: 100px;
+}
+.neesilo{
+    font-size:50px;
+    font-weight: 700;
+    font-family: chiller;
+    margin-left: 100px;
+}
+.introM{
+    font-size:25px;
+    font-weight: 600;
+    font-family: chiller;
+    margin-left: 280px;
+  
+}
