@@ -16,6 +16,8 @@ import Attendance from "./pages/Attendance";
 import Profile from "./pages/Profile";
 import Complaint from "./pages/Complaint";
 import DashboardLayout from "./layouts/DashboardLayout";
+import Minutes from "./pages/Minutes";
+import Register from "./pages/Register";
 
 function App() {
   const router = createBrowserRouter(
@@ -26,6 +28,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
+          <Route path="/register" element={<Register />} />
           <Route path="/employee-form" element={<EmployeeForm />} />
           <Route path="/employer-form" element={<EmployerForm />} />
         </Route>
@@ -33,6 +36,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path="attendance" element={<Attendance />} />
           <Route path="complaint" element={<Complaint />} />
+          <Route path="minutes" element={<Minutes />} />
         </Route>
       </>
     )

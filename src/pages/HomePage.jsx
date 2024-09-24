@@ -1,8 +1,8 @@
 import React from "react";
 import "./Page.css";
-import circle from "../assets/images/circle.jpeg";
-import join from "../assets/images/join.jpeg";
-import chain from "../assets/images/chain.jpeg";
+import okpu1 from "../assets/images/okpu1.jpg";
+import okpu3 from "../assets/images/okpu3.jpg";
+import okpu5 from "../assets/images/okpu5.jpg";
 import hand from "../assets/images/hand.jpeg";
 import img4 from "../assets/images/4.png";
 import { Link } from "react-router-dom";
@@ -12,12 +12,28 @@ const HomePage = () => {
     <div className="mt-[-2px] relative">
       <p className="mb-[100px]">
         {" "}
-        <img src={img4} className="-z-5" />{" "}
+        <img src={okpu3} className="w-full" />{" "}
       </p>
       <div className="md:flex justify-between  mt-[-30px] mb-5">
         <div className="md:w-1/2 md:px-5">
           <img src={hand} width={800} className="pix" />
         </div>
+        {/* Animations */}
+        <section class="flex">
+          <div class="flex-item">
+            <div class="toast add">
+              {/* <code>add;</code> */}
+              <img src={okpu3} width={20} />
+            </div>
+          </div>
+          <div class="flex-item">
+            <div class="toast accumulate">
+              {/* <code>accumulate;</code> */}
+              <img src={okpu5} width={20} />
+            </div>
+          </div>
+        </section>
+
         {/* Nurse and Checked list */}
         <div className="md:p-[30px] ml-[30px] p-[30px] md:w-1/2 md:mt-[50px] md:ml-[-300px]">
           <p className="md:fs text-blue-500 mt-5">

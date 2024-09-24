@@ -2,7 +2,23 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.jpeg";
 import { BiMenu, BiX } from "react-icons/bi";
+import { IoIosArrowDown } from "react-icons/io";
+import { Dropdown, Space } from "antd";
 import "./Comp.css";
+
+const items = [
+  {
+    label: <Link to={"dashboard"}>Login</Link>,
+    key: "0",
+  },
+  {
+    type: "divider",
+  },
+  {
+    label: <Link to={"register"}>Register</Link>,
+    key: "1",
+  },
+];
 
 const Navi = () => {
   // State to manage the navbar's visibility
@@ -61,14 +77,21 @@ const Navi = () => {
                   </li>
                 </>
               ))}
-              <button>
-                <Link
-                  to={"dashboard"}
-                  className="bg-blue-500 text-[#000835] font-serif font-bold men"
-                >
-                  Login
-                </Link>
-              </button>
+              <div className="flex mt-[25px]">
+                <p>Accounts</p>
+
+                {/* <p>
+                  {" "}
+                  <IoIosArrowDown />{" "}
+                </p> */}
+                <Dropdown menu={{ items }} trigger={["click"]}>
+                  <a onClick={(e) => e.preventDefault()}>
+                    <Space>
+                      <IoIosArrowDown />
+                    </Space>
+                  </a>
+                </Dropdown>
+              </div>
             </ul>
           </div>
         </div>
@@ -101,14 +124,21 @@ const Navi = () => {
               <Link to={item.to}>{item.txt}</Link>
             </li>
           ))}
-          <button>
-            <Link
-              to={"dashboard"}
-              className="text-[#000835] ml-[10px] font-serif font-bold"
-            >
-              Login
-            </Link>
-          </button>
+          <div className="flex mt-[25px]">
+            <p>Accounts</p>
+
+            {/* <p>
+                  {" "}
+                  <IoIosArrowDown />{" "}
+                </p> */}
+            <Dropdown menu={{ items }} trigger={["click"]}>
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  <IoIosArrowDown />
+                </Space>
+              </a>
+            </Dropdown>
+          </div>
         </ul>
       </div>
     </div>

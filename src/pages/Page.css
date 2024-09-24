@@ -30,3 +30,85 @@
     margin-left: 280px;
   
 }
+
+/* Animation */
+
+
+.toast {
+    transform: translateX(50px) rotate(45deg);
+    transform-origin: 50% 50%;
+  }
+  
+  .accumulate {
+    animation-composition: accumulate;
+  }
+  
+  .add {
+    animation-composition: add;
+  }
+  
+  @keyframes scaleIn {
+    to {
+      transform: translateX(50px);
+      z-index: 3;
+    }
+  }
+  
+  @layer demo {
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      background-color: whitesmoke;
+      font-family: system-ui;
+      place-content: center;
+    }
+  
+    section.flex {
+      align-items: center;
+      display: flex;
+      justify-content:center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      height: 100%;
+      padding-inline: 1rem;
+    }
+  
+    .flex-item {
+      margin-inline: auto;
+      margin-right: 200px;
+    }
+  
+    .toast {
+      background: #ddd;
+      border: 0.5px solid #bbb;
+      border-radius: 0.5rem;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+      font-size: 1.25rem;
+      height: 1.5rem;
+      margin-block: 1rem;
+      margin-inline: auto;
+      padding-block: 0.5rem;
+      padding-inline: 1.5rem;
+      width: fit-content;
+  
+      p {
+        padding: 0;
+        margin: 0;
+        line-height: 1;
+      }
+  
+      @media (prefers-reduced-motion: no-preference) {
+        animation: scaleIn 2s ease-out infinite alternate;
+        animation-delay: 1s;
+  
+        &:hover {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
