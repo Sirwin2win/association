@@ -12,7 +12,7 @@ import Gallery from "../components/Gallery";
 const HomePage = () => {
   return (
     <div className="mt-[-2px] relative">
-      <Landing />
+      <Gallery />
       <div className="md:flex justify-between  mt-[0px] mb-5">
         <div className="md:w-1/2 md:px-5">
           <img src={hand} width={800} className="pix" />
@@ -66,7 +66,7 @@ const HomePage = () => {
         </div>
       </div>
       <hr />
-      <Gallery />
+      <Landing />
     </div>
   );
 };
