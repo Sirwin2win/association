@@ -3,16 +3,55 @@ import hat from "../assets/images/hat.jpeg";
 import { RxHome } from "react-icons/rx";
 import { FiPhone } from "react-icons/fi";
 import { BsEnvelope } from "react-icons/bs";
+import join from "../assets/images/join.jpg";
+import oneness from "../assets/images/oneness.jpg";
+import okpu6 from "../assets/images/okpu6.jpg";
 
 const Contact = () => {
   return (
     <div>
-      <div className="relative mb-[50px]">
-        <img src={hat} alt="Contact Image" className="w-full" />
-
-        <p className="absolute ml-[50px] text-red-700 md:text-8xl mt-[-100px] md:mt-[-400px] md:ml-[100px] md:contro ">
-          Contact Us
-        </p>
+      <div className="container">
+        <div
+          id="carouselExampleFade"
+          className="carousel slide carousel-fade h-200 "
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div className="carousel-item active h-200">
+              <img src={okpu6} className="d-block hslide" alt="..." />
+            </div>
+            <div className="carousel-item h-200">
+              <img src={oneness} className="d-block hslide" alt="..." />
+            </div>
+            <div className="carousel-item h-200">
+              <img src={join} className="d-block hslide" alt="..." />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleFade"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
       <b className="text-[#000835] ml-[200px]">Get in Touch</b>
       <div className="md:flex justify-between mt-[30px] ml-[100px]">

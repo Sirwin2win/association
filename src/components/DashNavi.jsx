@@ -16,9 +16,10 @@ const DashNavi = () => {
   // Array containing navigation items
   const navItems = [
     { id: 1, to: "profile", txt: "Profile" },
-    { id: 2, to: "attendance", txt: "Attendance" },
-    { id: 3, to: "complaint", txt: "Complaint" },
-    { id: 4, to: "logout", txt: "LogOut" },
+    { id: 2, to: "branch", txt: "Branch" },
+    { id: 3, to: "attendance", txt: "Attendance" },
+    { id: 4, to: "complaint", txt: "Complaint" },
+    { id: 5, to: "logout", txt: "LogOut" },
   ];
 
   return (

@@ -6,15 +6,14 @@ import okpu5 from "../assets/images/okpu5.jpg";
 import hand from "../assets/images/hand.jpeg";
 import img4 from "../assets/images/4.png";
 import { Link } from "react-router-dom";
+import Landing from "../components/Landing";
+import Gallery from "../components/Gallery";
 
 const HomePage = () => {
   return (
     <div className="mt-[-2px] relative">
-      <p className="mb-[100px]">
-        {" "}
-        <img src={okpu3} className="w-full" />{" "}
-      </p>
-      <div className="md:flex justify-between  mt-[-30px] mb-5">
+      <Landing />
+      <div className="md:flex justify-between  mt-[0px] mb-5">
         <div className="md:w-1/2 md:px-5">
           <img src={hand} width={800} className="pix" />
         </div>
@@ -66,6 +65,8 @@ const HomePage = () => {
           </button>
         </div>
       </div>
+      <hr />
+      <Gallery />
     </div>
   );
 };
