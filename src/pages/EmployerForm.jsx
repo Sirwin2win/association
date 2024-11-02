@@ -1,5 +1,5 @@
 import React from "react";
-import isiagu from "../assets/images/isiagu.jpeg";
+import isiagu from "../assets/images/isiagu.jpg";
 
 const Employerform = () => {
   return (

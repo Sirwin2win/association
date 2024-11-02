@@ -1,5 +1,7 @@
-import { Outlet, Link } from "react-router-dom";
-import React, { useState } from "react";
+import { Outlet, useNavigate, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { reset, logout } from "../features/auth/authSlice";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -7,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import { FiLogOut } from "react-icons/fi";
 import { GiBackstab } from "react-icons/gi";
+import { FaCodeBranch } from "react-icons/fa6";
 import { PiAddressBook, PiBookOpenTextDuotone } from "react-icons/pi";
 import { Button, Layout, Menu, theme, Image } from "antd";
 import logo from "../assets/images/logo.jpeg";
@@ -14,20 +17,44 @@ import logo from "../assets/images/logo.jpeg";
 const { Header, Sider, Content } = Layout;
 
 const DashboardLayout = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  //User State
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  // Instantiating dispatch hook
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const onLogout = () => {
+    dispatch(logout());
+    dispatch(reset());
+    navigate("/");
+  };
+  // Time Based greeting
+  let myDate = new Date();
+  let hours = myDate.getHours();
+  let greet;
+
+  if (hours < 12) greet = "morning";
+  else if (hours >= 12 && hours <= 16) greet = "afternoon";
+  else if (hours >= 16 && hours <= 24) greet = "evening";
+
+  // Collapsable
+  const [collapsed, setCollapsed] = useState(true);
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
   return (
-    <Layout className="h-screen">
+    <Layout className="h-full">
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="demo-logo-vertical mt-[100px]" />
         <Link to={"/"}>
           <Image
-            width={50}
+            width={30}
             src={logo}
-            height={50}
-            className="ml-[60px] mt-[-40px]"
+            height={30}
+            className="ml-[30px] mt-[-40px]"
           />
         </Link>
         <Menu
@@ -40,6 +67,7 @@ const DashboardLayout = () => {
               icon: <UserOutlined />,
               label: <Link to={"profile"}>Profile</Link>,
             },
+
             {
               key: "2",
               icon: <PiAddressBook />,
@@ -57,8 +85,18 @@ const DashboardLayout = () => {
             },
             {
               key: "5",
-              icon: <FiLogOut />,
-              label: <Link to={"logout"}>LogOut</Link>,
+              icon: <PiBookOpenTextDuotone />,
+              label: <Link to={"contributions"}>Contributions</Link>,
+            },
+            {
+              key: "6",
+              icon: <PiBookOpenTextDuotone />,
+              label: <Link to={"black-list"}>Black List</Link>,
+            },
+            {
+              key: "7",
+              icon: <FiLogOut onClick={onLogout} />,
+              label: "LogOut",
             },
           ]}
         />
@@ -70,6 +108,10 @@ const DashboardLayout = () => {
             background: colorBgContainer,
           }}
         >
+          <h1 className="text-primary font-extrabold mb-5 text-center mt-[30px]">
+            Good {greet} {user && user.firstName}!
+          </h1>
+
           <Button
             type="text"
             icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -85,10 +127,11 @@ const DashboardLayout = () => {
           style={{
             margin: "24px 16px",
             padding: 24,
-            minHeight: 280,
+            // minHeight: 280,
             background: colorBgContainer,
             borderRadius: borderRadiusLG,
           }}
+          // className="h-"
         >
           <Outlet />
         </Content>

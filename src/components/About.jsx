@@ -11,10 +11,10 @@ const About = () => {
   return (
     <div>
       <div className="md:flex justify-between">
-        <div className="px-5 md:px-0 md:w-1/2 md:mt-[-100px] mb-[50px]">
+        <div className="px-5 md:px-0 md:w-1/2 md:mt-[20px] mb-[50px]">
           <img src={rad} />
         </div>
-        <div className="px-5 md:px-[50px] md:w-1/2 md:p-[100px] md:mt-[150px]">
+        <div className="px-5 md:px-[50px] md:w-1/2 md:p-[100px] md:mt-[50px]">
           <b className="text-[#000835] intr">
             Welcome to our Association: where we do things together
           </b>

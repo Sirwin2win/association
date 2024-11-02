@@ -8,7 +8,7 @@ import "./Comp.css";
 
 const items = [
   {
-    label: <Link to={"dashboard"}>Login</Link>,
+    label: <Link to={"login"}>Login</Link>,
     key: "0",
   },
   {

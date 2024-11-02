@@ -4,7 +4,7 @@ import logo from "../assets/images/logo.jpeg";
 
 const Footer = () => {
   return (
-    <div className="md:flex justify-evenly border-t border-[#000835]">
+    <div className="md:flex justify-evenly border-t border-[#000835] mb-5">
       <div className="mx-5 ml-[80px] md:ml-0">
         <Link
           to={"/"}
@@ -71,7 +71,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Quick Links */}
-      <div className="mx-[80px] mt-[50px]">
+      <div className="ml-[50px] md:mx-[80px] mt-[50px]">
         <p className="font-bold ml-[20px] text-[#000835]">Our Branches</p>
         <div className="flex mt-[25px]">
           <input type="checkbox" checked />
@@ -132,7 +132,7 @@ const Footer = () => {
           </form>
         </div>
       </div>
-      <hr />
+      <hr className="mb-5" />
     </div>
   );
 };
