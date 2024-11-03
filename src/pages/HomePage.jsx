@@ -64,6 +64,14 @@ const HomePage = () => {
             <Link to={"/employee-form"}>Join Us</Link>
           </button>
         </div>
+        <div className="">
+          <Link to={"/city"} className="text-white">
+            City
+          </Link>
+          <Link to={"/branch"} className="text-white">
+            Branch
+          </Link>
+        </div>
       </div>
       <hr />
       <Landing />
