@@ -98,23 +98,23 @@ export const getCity = createAsyncThunk(
 )
 
 // Delete user store
-// export const deleteStore = createAsyncThunk(
-//   'stores/delete',
-//   async (storeId:string, thunkAPI:any) => {
-//     try {
-//       const token = thunkAPI.getState().auth.user.token
-//       return await storeService.deleteStore(storeId, token)
-//     } catch (error:any) {
-//       const message =
-//         (error.response &&
-//           error.response.data &&
-//           error.response.data.message) ||
-//         error.message ||
-//         error.toString()
-//       return thunkAPI.rejectWithValue(message)
-//     }
-//   }
-// )
+export const deleteCities = createAsyncThunk(
+  'cities/delete',
+  async (cityId, thunkAPI) => {
+    try {
+      // const id = thunkAPI.getState().auth.cities.id
+      const res = await axios.delete(`https://assoback.onrender.com/cities/${cityId}`)
+    } catch (error) {
+      const message =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString()
+      return thunkAPI.rejectWithValue(message)
+    }
+  }
+)
 
 export const citySlice = createSlice({
   name: 'city',
@@ -163,21 +163,21 @@ export const citySlice = createSlice({
         state.isError = true
         state.message = action.payload
       })
-    //   .addCase(deleteStore.pending, (state) => {
-    //     state.isLoading = true
-    //   })
-    //   .addCase(deleteStore.fulfilled, (state, action) => {
-    //     state.isLoading = false
-    //     state.isSuccess = true
-    //     state.stores = state.stores.filter(
-    //       (store:any) => store.storeId !== action.payload.id
-    //     )
-    //   })
-    //   .addCase(deleteStore.rejected, (state:any, action) => {
-    //     state.isLoading = false
-    //     state.isError = true
-    //     state.message = action.payload
-    //   })
+      .addCase(deleteCities.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(deleteCities.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isSuccess = true
+        state.cities = state.cities.filter(
+          (city) => city.cityId !== action.payload.id
+        )
+      })
+      .addCase(deleteCities.rejected, (state, action) => {
+        state.isLoading = false
+        state.isError = true
+        state.message = action.payload
+      })
   },
 })
 

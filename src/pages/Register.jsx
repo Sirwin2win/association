@@ -92,11 +92,12 @@ const Register = () => {
     console.log(sub);
 
     dispatch(register(sub));
+    dispatch(reset());
     setFormData("");
     setBra("");
     setStat("");
     setCity("");
-    navigate("/dashboard");
+    navigate("/login");
   };
   return (
     <div>

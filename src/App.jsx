@@ -28,6 +28,8 @@ import ContributionPage from "./pages/ContributionPage";
 import City from "./components/City";
 import Branch from "./components/Branch";
 import ManageComplaint from "./pages/ManageComplaint";
+import ManageCities from "./pages/ManageCities";
+import CitiesDetail from "./components/CitiesDetail";
 //
 function App() {
   const router = createBrowserRouter(
@@ -42,6 +44,8 @@ function App() {
           <Route path="/city" element={<City />} />
           <Route path="/branch" element={<Branch />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/:id" element={<CitiesDetail />} />
+          <Route path="/manage-cities" element={<ManageCities />} />
           <Route path="/employee-form" element={<EmployeeForm />} />
           <Route path="/employer-form" element={<EmployerForm />} />
         </Route>
