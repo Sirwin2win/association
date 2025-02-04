@@ -8,11 +8,13 @@ import img4 from "../assets/images/4.png";
 import { Link } from "react-router-dom";
 import Landing from "../components/Landing";
 import Gallery from "../components/Gallery";
+import Home2 from "../components/Home2";
 
 const HomePage = () => {
   return (
     <div className="mt-[-2px] relative">
-      <Gallery />
+      {/* <Gallery /> */}
+      <Home2 />
       <div className="md:flex justify-between  mt-[0px] mb-5">
         <div className="md:w-1/2 md:px-5">
           <img src={hand} width={800} className="pix" />

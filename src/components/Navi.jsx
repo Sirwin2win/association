@@ -38,9 +38,9 @@ const Navi = () => {
   ];
 
   return (
-    <div>
-      <nav className="relative md:mb-0 bg-blue-500 border-gray-200 dark:bg-gray-900">
-        <div className="max-w-screen-xl flex flex-wrap bg-blue-500 items-center justify-evenly mx-auto p-4 mt-[20px]">
+    <div className="bg-orange-700">
+      <nav className="relative md:mb-0 ">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-evenly mx-auto p-4 mt-[20px]">
           <Link
             to={"/"}
             className="flex items-center space-x-1 rtl:space-x-reverse"
@@ -53,24 +53,21 @@ const Navi = () => {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="inline-flex bg-blue-500 items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
             aria-expanded="false"
           ></button>
-          <div
-            className="bg-blue-500 hidden w-full md:block md:w-auto"
-            id="navbar-default"
-          >
-            <ul className="bg-blue-500 flex">
+          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+            <ul className="flex">
               {navItems.map((item) => (
                 <>
                   <li
                     key={item.id}
-                    className="p-4 bg-blue-500 text-[#000835] rounded-xl m-2 cursor-pointer duration-300 hover:text-[#000835]"
+                    className="p-4 text-[#000835] rounded-xl m-2 cursor-pointer duration-300 hover:text-[#000835]"
                   >
                     <Link
                       to={item.to}
-                      className="bg-blue-500 text-[#000835] font-serif font-bold men"
+                      className="text-[#000835] font-serif font-bold men"
                     >
                       {item.txt}
                     </Link>
