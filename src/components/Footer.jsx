@@ -4,7 +4,7 @@ import logo from "../assets/images/logo.jpeg";
 
 const Footer = () => {
   return (
-    <div className="md:flex justify-evenly border-t border-[#000835] mb-5">
+    <div className="md:flex justify-evenly border-t border-[#000835] mb-5 bg-orange-700">
       <div className="mx-5 ml-[80px] md:ml-0">
         <Link
           to={"/"}
